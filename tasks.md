@@ -1,53 +1,3 @@
-# Funcionalidades Essenciais (Backend)
-
-## 1.1. Autenticação de Usuários
-
-- [x] **Registro de Usuários:**
-    - [x] Criar endpoint de cadastro de usuários (`POST /register`).
-        - Campos: nome, e-mail, senha, telefone, endereço, tipo de usuário (adotante, administrador).
-
-- [x] **Login de Usuários:**
-    - [x] Criar endpoint de login (`POST /login`).
-        - Geração e gestão de tokens (ex: Laravel Sanctum).
-
-- [x] **Sistema de Logout:**
-    - [x] Criar endpoint de logout (`POST /logout`).
-
-## 1.2. Gerenciamento de Animais
-
-- [x] **Cadastro de Animais (Admin):**
-    - [x] Criar endpoint para cadastro de novos animais para adoção (`POST /animals`).
-        - Campos: nome, espécie, raça, idade, porte, gênero, status, foto, descrição.
-
-- [x] **Listagem de Animais Disponíveis para Adoção:**
-    - [x] Criar endpoint para listar todos os animais disponíveis (`GET /animals`).
-        - Implementar filtros por espécie, idade, porte, etc.
-  
-    - [x] **Detalhes de Animais:**
-      - [x] Criar endpoint para visualizar detalhes de um animal (`GET /animals/{id}`).
-      
-    - [x] **Edição e Remoção de Animais (Admin):**
-      - [x] Criar endpoint para editar informações de um animal (`PUT /animals/{id}`).
-      - [x] Criar endpoint para remover um animal do banco de dados (`DELETE /animals/{id}`).
-
-## 1.3. Sistema de Adoção
-
-- [x] **Iniciar Processo de Adoção:**
-  - [x] Criar endpoint para usuários adotarem um animal (`POST /adoption`).
-  - [x] Associar o usuário e o animal à adoção com status pendente.
-  
-- [x] **Finalizar Adoção (Admin):**
-  - [x] Criar endpoint para concluir o processo de adoção (`PUT /adoption/{pet_id}/{user_id}/complete`).
-  - [x] Alterar status do animal para "adotado" e atualizar a relação de adoção.
-
-## 1.4. Sistema de Favoritos
-
-- [x] **Adicionar Animais aos Favoritos:**
-    - [x] Criar endpoint para que usuários possam adicionar animais aos favoritos (`POST /favorites`).
-
-- [x] **Visualizar Animais Favoritos:**
-    - [x] Criar endpoint para visualizar animais favoritos de um usuário (`GET /favorites`).
-
 # 2. Funcionalidades do Frontend (Vue.js)
 
 ## 2.1. Autenticação
@@ -56,9 +6,9 @@
     - [x] Implementar formulário de login no frontend.
     - [x] Conectar o formulário ao backend via API para autenticação.
 
-- [ ] **Criar Tela de Registro:**
-    - [ ] Criar formulário para cadastro de novos usuários.
-    - [ ] Implementar a conexão com o backend para criar o usuário.
+- [x] **Criar Tela de Registro:**
+    - [x] Criar formulário para cadastro de novos usuários.
+    - [x] Implementar a conexão com o backend para criar o usuário.
 
 ## 2.2. Página Inicial (Home)
 

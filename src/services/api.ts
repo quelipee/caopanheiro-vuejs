@@ -16,8 +16,8 @@ const apiToken = axios.create({
     'Content-Type': 'application/json',
   }
 });
-export const getToken = async () : Promise<void> =>{
-  return await apiToken.get('/sanctum/csrf-cookie');
+export const getToken = async () => {
+    return await apiToken.get('/sanctum/csrf-cookie');
 }
 export const signInAuthenticated = async (user: User) => {
     await getToken();
@@ -25,8 +25,19 @@ export const signInAuthenticated = async (user: User) => {
       email: user.email,
       password: user.password,
     }).then((res:AxiosResponse) =>{
-      const token = res.data.user.token;
+      const token = res.data.user.access_token;
       localStorage.setItem('token',token);
       return res.data
     });
+}
+export const signUpAuthenticated = async (user: User) => {
+  return api.post('/register',{
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    phone_number: user.phone_number,
+    address: user.address
+  }).then((res) => {
+    return res.data;
+  });
 }

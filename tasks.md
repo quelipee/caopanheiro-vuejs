@@ -13,7 +13,7 @@
 ## 2.2. Página Inicial (Home)
 
 - [ ] **Mostrar Animais Disponíveis:**
-    - [ ] Exibir uma lista de animais disponíveis para adoção na página inicial.
+    - [x] Exibir uma lista de animais disponíveis para adoção na página inicial.
     - [ ] Filtrar animais por espécie (cachorros, gatos) e outras características (idade, porte, etc.).
 
 - [ ] **Botão de Ação: Adotar ou Favoritar:**

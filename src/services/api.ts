@@ -9,6 +9,14 @@ const api = axios.create({
     'Content-Type': 'application/json',
   }
 });
+const apiAuth = axios.create({
+  baseURL: import.meta.env.VITE_APP_BACKEND_URL,
+  withCredentials: true,
+  headers:{
+    'Content-Type': 'application/json',
+    "Authorization": `Bearer ${localStorage.getItem("token")}`
+  }
+});
 const apiToken = axios.create({
   baseURL: import.meta.env.VITE_APP_TOKEN,
   withCredentials: true,
@@ -16,6 +24,7 @@ const apiToken = axios.create({
     'Content-Type': 'application/json',
   }
 });
+
 export const getToken = async () => {
     return await apiToken.get('/sanctum/csrf-cookie');
 }
@@ -39,5 +48,11 @@ export const signUpAuthenticated = async (user: User) => {
     address: user.address
   }).then((res) => {
     return res.data;
+  });
+}
+
+export const getAllAnimalsForAdoption = async () => {
+  return apiAuth.get('/animals').then((res) => {
+    return res.data
   });
 }

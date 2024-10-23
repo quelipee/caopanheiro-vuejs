@@ -24,6 +24,7 @@ export interface Pet {
   updated_at: Date
 }
 export interface Petlist {
+  id: string,
   name: string,
   age: number,
   breed: string,

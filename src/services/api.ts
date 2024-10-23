@@ -56,3 +56,21 @@ export const getAllAnimalsForAdoption = async () => {
     return res.data
   });
 }
+
+export const addToFavorites = async (id : string) => {
+  return apiAuth.post('favorite/' + id).then((res) => {
+    return res.data
+  });
+}
+
+export const getToFavorites = async () => {
+  return apiAuth.get('/favorites').then((res) => {
+    return res.data
+  });
+}
+
+export const removeToFavorite = async (id: string) => {
+  return apiAuth.delete('favorite/' + id).then((res) => {
+    return res.data
+  });
+}

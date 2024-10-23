@@ -17,8 +17,9 @@
     - [ ] Filtrar animais por espécie (cachorros, gatos) e outras características (idade, porte, etc.).
 
 - [ ] **Botão de Ação: Adotar ou Favoritar:**
-    - [ ] Implementar botões de ação para iniciar o processo de adoção ou adicionar aos favoritos.
-
+    - [x] Implementar botões de ação para iniciar o processo de adoção ou adicionar aos favoritos.
+    - [x] Implementar a funcionalidade com o backEnd para adicionar e remover dos favoritos.
+    - [ ] Implementar a funcionalidade com o backEnd para iniciar a adoção.
 ## 2.3. Listagem e Detalhes de Animais
 
 - [ ] **Página de Detalhes do Animal:**

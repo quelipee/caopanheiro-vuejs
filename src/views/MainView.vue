@@ -21,6 +21,7 @@
           <AnimalCard
             v-for="pet in filteredPets"
             :key="pet.id"
+            :id="pet.id"
             :name="pet.name"
             :age="pet.age"
             :breed="pet.breed"
@@ -44,6 +45,7 @@ const useAuth = useAuthStore();
 const searchQuery = ref('');
 
 onMounted(async () => {
+  await useAuth.getToFavoritesUserAuth();
   await useAuth.getAnimalsForAdoption();
 });
 

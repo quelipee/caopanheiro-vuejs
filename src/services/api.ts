@@ -14,9 +14,21 @@ const apiAuth = axios.create({
   withCredentials: true,
   headers:{
     'Content-Type': 'application/json',
-    "Authorization": `Bearer ${localStorage.getItem("token")}`
   }
 });
+
+apiAuth.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  } else {
+    console.warn('Token not found!');
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
+
 const apiToken = axios.create({
   baseURL: import.meta.env.VITE_APP_TOKEN,
   withCredentials: true,
@@ -65,6 +77,7 @@ export const addToFavorites = async (id : string) => {
 
 export const getToFavorites = async () => {
   return apiAuth.get('/favorites').then((res) => {
+    console.log(res.data);
     return res.data
   });
 }

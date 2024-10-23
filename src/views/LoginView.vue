@@ -161,10 +161,10 @@
     });
   };
   const signUpForm = async () => {
-    console.log(user.value);
-    await signUpAuthenticated(user.value).then((response) => {
+    await signUpAuthenticated(user.value).then(async (response) => {
       console.log(response);
-      signInAuthenticated(user.value);
+      await signInAuthenticated(user.value);
+      await router.replace('/');
     }).catch((err) => {
       errorLogin.value = err.response.data.message;
       setTimeout(() => {

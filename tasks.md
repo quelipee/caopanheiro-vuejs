@@ -22,8 +22,8 @@
     - [ ] Implementar a funcionalidade com o backEnd para iniciar a adoção.
 ## 2.3. Listagem e Detalhes de Animais
 
-- [ ] **Página de Detalhes do Animal:**
-    - [ ] Implementar uma página que exibe os detalhes completos de um animal ao clicar nele.
+- [x] **Página de Detalhes do Animal:**
+    - [x] Implementar uma página que exibe os detalhes completos de um animal ao clicar nele.
 
 ## 2.4. Sistema de Favoritos
 

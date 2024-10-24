@@ -1,6 +1,7 @@
 import { axios } from '@/shared/components';
 import type { User } from '@/interface/type'
 import type { AxiosResponse } from 'axios'
+import type { RouteParamValue } from 'vue-router'
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_APP_BACKEND_URL,
@@ -48,7 +49,7 @@ export const signInAuthenticated = async (user: User) => {
     }).then((res:AxiosResponse) =>{
       const token = res.data.user.access_token;
       localStorage.setItem('token',token);
-      return res.data
+      return res.data;
     });
 }
 export const signUpAuthenticated = async (user: User) => {
@@ -65,25 +66,30 @@ export const signUpAuthenticated = async (user: User) => {
 
 export const getAllAnimalsForAdoption = async () => {
   return apiAuth.get('/animals').then((res) => {
-    return res.data
+    return res.data;
   });
 }
 
 export const addToFavorites = async (id : string) => {
   return apiAuth.post('favorite/' + id).then((res) => {
-    return res.data
+    return res.data;
   });
 }
 
 export const getToFavorites = async () => {
   return apiAuth.get('/favorites').then((res) => {
-    console.log(res.data);
-    return res.data
+    return res.data;
   });
 }
 
 export const removeToFavorite = async (id: string) => {
-  return apiAuth.delete('favorite/' + id).then((res) => {
-    return res.data
+  return apiAuth.delete(`favorite/${id}`).then((res) => {
+    return res.data;
+  });
+}
+
+export const petProfileView = async (id: string | RouteParamValue[]) => {
+  return apiAuth.get(`/animals/${id}`).then((res) => {
+    return res.data;
   });
 }

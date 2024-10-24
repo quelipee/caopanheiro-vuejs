@@ -32,3 +32,14 @@ export interface Petlist {
   description: string,
   imageUrl: string
 }
+export interface PetDetail {
+  photo: string,
+  name : string,
+  breed: string,
+  gender: string,
+  species: string,
+  age: number,
+  shelter_id: string,
+  status: string,
+  statusClass: string,
+}

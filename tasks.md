@@ -27,8 +27,8 @@
 
 ## 2.4. Sistema de Favoritos
 
-- [ ] **Página de Favoritos:**
-    - [ ] Criar uma página para exibir os animais que o usuário adicionou aos favoritos.
+- [x] **Página de Favoritos:**
+    - [x] Criar uma página para exibir os animais que o usuário adicionou aos favoritos.
 
 ## 2.5. Página de Perfil do Usuário
 

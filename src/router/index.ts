@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '@/views/MainView.vue'
 import LoginView from '@/views/LoginView.vue'
 import { AnimalDetailsView } from '@/shared/components'
+import FavoriteView from '@/views/FavoriteView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,18 @@ const router = createRouter({
       path: '/profile/:id',
       name: 'profile',
       component: AnimalDetailsView,
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.getItem('token')){
+          next('signIn');
+        }else {
+          next();
+        }
+      }
+    },
+    {
+      path: '/favorites',
+      name: 'favorites',
+      component: FavoriteView,
       beforeEnter: (to, from, next) => {
         if (!localStorage.getItem('token')){
           next('signIn');

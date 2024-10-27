@@ -11,7 +11,12 @@
           <p class="text-gray-600 font-semibold">Raça: {{ pet.breed }}</p>
           <p class="text-gray-600 font-semibold">Idade: {{ pet.age }} anos</p>
           <p class="text-gray-600 font-semibold">Status: {{ pet.status }}</p>
-          <div class="mt-4">
+          <div class="mt-4 space-x-1">
+            <button
+              @click="adopt(pet.id)"
+              class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">
+              Adotar
+            </button>
             <button
               @click="removeFromFavorites(pet.id)"
               class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600">
@@ -30,9 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import { HeaderComponent, FooterComponent, useAuthStore, onMounted } from '@/shared/components'
+import { HeaderComponent, FooterComponent, useAuthStore, onMounted, useRouter } from '@/shared/components'
 
 const useAuth = useAuthStore();
+const router = useRouter();
 
 onMounted(async () => {
   await useAuth.getToFavoritesUserAuth();
@@ -40,7 +46,15 @@ onMounted(async () => {
 
 function removeFromFavorites(petId: string) {
   useAuth.removeFavorite(petId);
-  // favorites.value = favorites.value.filter(pet => pet.id !== petId);
+}
+const adopt = (id : string) => {
+  console.log(id);
+  router.replace({
+    name: 'adopt',
+    params: {
+      id: id,
+    }
+  });
 }
 </script>
 

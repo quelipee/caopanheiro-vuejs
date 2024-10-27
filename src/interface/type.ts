@@ -43,3 +43,10 @@ export interface PetDetail {
   status: string,
   statusClass: string,
 }
+export interface AdoptForm {
+  housing_type: string,
+  availability: number | null,
+  experience: string,
+  other_animals: string,
+  reason: string,
+}

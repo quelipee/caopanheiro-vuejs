@@ -1,5 +1,5 @@
 import { axios } from '@/shared/components';
-import type { User } from '@/interface/type'
+import type { AdoptForm, User } from '@/interface/type'
 import type { AxiosResponse } from 'axios'
 import type { RouteParamValue } from 'vue-router'
 
@@ -90,6 +90,20 @@ export const removeToFavorite = async (id: string) => {
 
 export const petProfileView = async (id: string | RouteParamValue[]) => {
   return apiAuth.get(`/animals/${id}`).then((res) => {
+    return res.data;
+  });
+}
+
+export const adoptionAnalysis = async (adoptForm: AdoptForm, id: string | RouteParamValue[]) => {
+  return apiAuth.post(`/adoption/${id}`, {
+    housing_type: adoptForm.housing_type,
+    availability: adoptForm.availability,
+    experience: adoptForm.experience,
+    other_animals: adoptForm.other_animals,
+    reason: adoptForm.reason,
+    animal_id: id
+  }).then(res => {
+    console.log(res.data);
     return res.data;
   });
 }

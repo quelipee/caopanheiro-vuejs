@@ -22,6 +22,7 @@
         />
         <AdoptionButtonsComponent
         v-if="isPetDetailsValid"
+        :id="useAuth.petDetails.id"
         :name="useAuth.petDetails.name"
         :description="useAuth.petDetails.description"/>
       </div>

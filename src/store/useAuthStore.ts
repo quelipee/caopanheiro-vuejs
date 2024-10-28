@@ -1,6 +1,12 @@
 import { defineStore } from 'pinia'
 import type { Pet, User } from '@/interface/type'
-import { getAllAnimalsForAdoption, getToFavorites, petProfileView, removeToFavorite } from '@/services/api'
+import {
+  adoptionList,
+  getAllAnimalsForAdoption,
+  getToFavorites,
+  petProfileView,
+  removeToFavorite
+} from '@/services/api'
 import type { RouteParamValue } from 'vue-router'
 
 export const useAuthStore = defineStore('useAuth',{
@@ -9,6 +15,7 @@ export const useAuthStore = defineStore('useAuth',{
     pet: [] as Array<Pet>,
     petDetails: {} as Pet,
     favorites_pets: [] as Array<Pet>,
+    adoption_list: [] as Array<any>
   }),
   actions : {
     async getAnimalsForAdoption(): Promise<void> {
@@ -26,6 +33,10 @@ export const useAuthStore = defineStore('useAuth',{
     async removeFavorite(id: string): Promise<void> {
       const pet = await removeToFavorite(id);
       this.petDetails = pet.data;
+    },
+    async listAdoptions() {
+      const adopt = await adoptionList();
+      this.adoption_list = adopt.data
     }
   },
   getters : {

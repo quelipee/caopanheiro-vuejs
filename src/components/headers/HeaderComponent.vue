@@ -5,8 +5,9 @@
         <h1 class="text-3xl font-bold">Cãopanheiro</h1>
       </router-link>
       <nav class="mt-4">
+        <router-link to="/user/adoptions" class="mr-6 hover:text-gray-300">Adoções</router-link>
+        <router-link to="/favorites" class="mr-6 hover:text-gray-300">Favoritos</router-link>
         <router-link to="#about" class="mr-6 hover:text-gray-300">Sobre Nós</router-link>
-        <router-link to="#pets" class="mr-6 hover:text-gray-300">Nossos Animais</router-link>
         <router-link to="#contact" class="hover:text-gray-300">Contato</router-link>
       </nav>
     </div>

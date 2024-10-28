@@ -103,7 +103,12 @@ export const adoptionAnalysis = async (adoptForm: AdoptForm, id: string | RouteP
     reason: adoptForm.reason,
     animal_id: id
   }).then(res => {
-    console.log(res.data);
+    return res.data;
+  });
+}
+
+export const adoptionList = async () => {
+  return apiAuth.get('adoptions/pending').then((res) => {
     return res.data;
   });
 }

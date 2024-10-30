@@ -18,7 +18,7 @@
         <p class="text-gray-600 font-semibold">Genero: {{ gender }}</p>
         <p class="text-gray-600 font-semibold">Espécie : {{ species }}</p>
         <p class="text-gray-600 font-semibold">Idade: {{ age }} anos</p>
-        <p class="text-gray-600 font-semibold">Abrigo: {{ shelter_id }}</p>
+        <p class="text-gray-600 font-semibold">Abrigo: {{ shelter }}</p>
         <p class="text-gray-500 mt-4 font-semibold">
           Status: <span :class="statusClass">{{ status }}</span>
         </p>

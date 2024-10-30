@@ -25,7 +25,7 @@
             :name="pet.name"
             :age="pet.age"
             :breed="pet.breed"
-            :shelter_id="pet.shelter_id"
+            :shelter_id="pet.shelter.name"
             :description="pet.description"
             :imageUrl="pet.photo"
           />

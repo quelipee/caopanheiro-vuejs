@@ -16,7 +16,7 @@
         :gender="useAuth.petDetails.gender"
         :species="useAuth.petDetails.species"
         :age="useAuth.petDetails.age"
-        :shelter_id="useAuth.petDetails.shelter_id"
+        :shelter="useAuth.petDetails.shelter.name"
         :status="useAuth.petDetails.status"
         :statusClass="statusClass"
         />
@@ -64,7 +64,7 @@ const isPetDetailsValid = computed(() => {
     details.gender &&
     details.species &&
     details.age &&
-    details.shelter_id &&
+    details.shelter &&
     details.status
   );
 });

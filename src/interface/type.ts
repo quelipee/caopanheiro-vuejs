@@ -17,7 +17,9 @@ export interface Pet {
   id: string,
   name: string,
   photo: string,
-  shelter_id: string,
+  shelter: {
+    name: string
+  },
   size: number,
   species: string,
   status: string,
@@ -39,7 +41,7 @@ export interface PetDetail {
   gender: string,
   species: string,
   age: number,
-  shelter_id: string,
+  shelter: string,
   status: string,
   statusClass: string,
 }

@@ -10,6 +10,7 @@ import { AnimalDetailsView } from '@/shared/components'
 import FavoriteView from '@/views/FavoriteView.vue'
 import AdoptionForm from '@/views/AdoptionForm.vue'
 import AdoptionsListView from '@/views/AdoptionsListView.vue'
+import AboutView from '@/views/AboutView.vue'
 
 const requireAuth = (to : RouteLocationNormalized, from : RouteLocationNormalizedLoadedGeneric, next : NavigationGuardNext) => {
   if (!localStorage.getItem('token')) {
@@ -64,6 +65,12 @@ const router = createRouter({
       component: AdoptionsListView,
       beforeEnter: requireAuth
     },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView,
+      beforeEnter: requireAuth
+    }
   ]
 })
 

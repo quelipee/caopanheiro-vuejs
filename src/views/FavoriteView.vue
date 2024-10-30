@@ -30,7 +30,7 @@
         <p class="text-xl text-gray-600">Você ainda não tem animais favoritos.</p>
       </div>
     </main>
-    <FooterComponent/>
+<!--    <FooterComponent/>-->
   </div>
 </template>
 

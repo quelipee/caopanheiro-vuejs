@@ -69,7 +69,7 @@
         </form>
       </div>
     </main>
-    <FooterComponent />
+  <!--<FooterComponent/>-->
   </div>
 </template>
 <script setup lang="ts">

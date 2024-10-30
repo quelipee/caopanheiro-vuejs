@@ -33,7 +33,7 @@
       </section>
       <FormContactComponent/>
     </main>
-    <FooterComponent/>
+<!--    <FooterComponent/>-->
   </div>
 </template>
 

@@ -27,7 +27,7 @@
         :description="useAuth.petDetails.description"/>
       </div>
     </main>
-    <FooterComponent/>
+<!--    <FooterComponent/>-->
   </div>
 </template>
 

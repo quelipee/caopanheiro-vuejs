@@ -66,7 +66,6 @@ export const signUpAuthenticated = async (user: User) => {
 
 export const getAllAnimalsForAdoption = async () => {
   return apiAuth.get('/animals').then((res) => {
-    console.log(res.data);
     return res.data;
   });
 }

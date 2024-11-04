@@ -25,6 +25,32 @@ export interface Pet {
   status: string,
   updated_at: Date
 }
+export interface PetAdoption {
+  age : number,
+  breed: string,
+  color: string,
+  created_at: Date,
+  description: string,
+  gender: string,
+  id: string,
+  name: string,
+  photo: string,
+  pivot: {
+    adoption_date: Date,
+    name: string,
+    animal_id: string,
+    created_at: Date,
+    id: string,
+    status: string,
+    updated_at: Date,
+    user_id: string
+  },
+  size: number,
+  species: string,
+  status: string,
+  updated_at: Date
+}
+
 export interface Petlist {
   id: string,
   name: string,

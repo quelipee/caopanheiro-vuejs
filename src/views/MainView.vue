@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 import { onMounted, AnimalCard, useAuthStore, FormContactComponent,
-  FooterComponent, HeaderComponent, FilterPetComponent, ref, computed } from '@/shared/components'
+  HeaderComponent, FilterPetComponent, ref, computed } from '@/shared/components'
 
 const useAuth = useAuthStore();
 const searchQuery = ref('');

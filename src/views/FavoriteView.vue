@@ -30,12 +30,11 @@
         <p class="text-xl text-gray-600">Você ainda não tem animais favoritos.</p>
       </div>
     </main>
-<!--    <FooterComponent/>-->
   </div>
 </template>
 
 <script setup lang="ts">
-import { HeaderComponent, FooterComponent, useAuthStore, onMounted, useRouter } from '@/shared/components'
+import { HeaderComponent, useAuthStore, onMounted, useRouter } from '@/shared/components'
 
 const useAuth = useAuthStore();
 const router = useRouter();
@@ -44,11 +43,10 @@ onMounted(async () => {
   await useAuth.getToFavoritesUserAuth();
 });
 
-function removeFromFavorites(petId: string) {
+const removeFromFavorites = (petId: string) => {
   useAuth.removeFavorite(petId);
 }
 const adopt = (id : string) => {
-  console.log(id);
   router.replace({
     name: 'adopt',
     params: {

@@ -27,24 +27,27 @@
         :description="useAuth.petDetails.description"/>
       </div>
     </main>
-<!--    <FooterComponent/>-->
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, HeaderComponent, FooterComponent, useAuthStore,
-  InformationComponent, AdoptionButtonsComponent, computed, ref } from '@/shared/components'
+import {
+  onMounted, HeaderComponent, useAuthStore,
+  InformationComponent, AdoptionButtonsComponent, computed, ref, useRouter
+} from '@/shared/components'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const useAuth = useAuthStore();
 const loading = ref(true);
+const router = useRouter();
 
 onMounted(async () => {
   try {
     await useAuth.getPetDetails(route.params.id);
   }catch (err){
     console.log(err);
+    await router.replace('/');
   }finally {
     loading.value = false;
   }

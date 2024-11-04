@@ -36,5 +36,6 @@ const viewDetails = (id: string) => {
 }
 onMounted(async () => {
   await useAuth.listAdoptions();
+  console.log(useAuth.adoption_list);
 })
 </script>

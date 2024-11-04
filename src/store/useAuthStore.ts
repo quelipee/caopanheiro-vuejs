@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { Pet, User } from '@/interface/type'
+import type { Pet, PetAdoption, User } from '@/interface/type'
 import {
   adoptionList,
   getAllAnimalsForAdoption,
@@ -15,7 +15,7 @@ export const useAuthStore = defineStore('useAuth',{
     pet: [] as Array<Pet>,
     petDetails: {} as Pet,
     favorites_pets: [] as Array<Pet>,
-    adoption_list: [] as Array<any>
+    adoption_list: [] as Array<PetAdoption>
   }),
   actions : {
     async getAnimalsForAdoption(): Promise<void> {
@@ -31,8 +31,9 @@ export const useAuthStore = defineStore('useAuth',{
       this.petDetails = pet.data;
     },
     async removeFavorite(id: string): Promise<void> {
-      const pet = await removeToFavorite(id);
-      this.petDetails = pet.data;
+      await removeToFavorite(id);
+      const pet = await getToFavorites();
+      this.favorites_pets = pet.data;
     },
     async listAdoptions() {
       const adopt = await adoptionList();

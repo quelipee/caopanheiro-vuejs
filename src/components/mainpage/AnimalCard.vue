@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import type { Petlist } from '@/interface/type'
-import { addToFavorites, removeToFavorite } from '@/services/api'
+import { addToFavorites } from '@/services/api'
 import { computed, useAuthStore, useRouter } from '@/shared/components'
 
 const useAuth = useAuthStore();
@@ -37,20 +37,11 @@ const addFavorite = async (id: string) => {
     console.log(err.response.data.message);
   });
 }
-const removeFavorite = async (id: string) => {
-  await removeToFavorite(id).then((responseData) => {
-    useAuth.getToFavoritesUserAuth();
-    console.log(responseData);
-  }).catch((err) => {
-    console.log(err.response.data.message);
-  });
-}
-
 const favorite = (id: string) => {
   if (isFavorite.value === 'pi pi-star') {
     addFavorite(id);
   }else {
-    removeFavorite(id);
+    useAuth.removeFavorite(id);
   }
 }
 const showAnimalProfile = (id : string) => {

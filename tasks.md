@@ -19,7 +19,7 @@
 - [ ] **Botão de Ação: Adotar ou Favoritar:**
     - [x] Implementar botões de ação para iniciar o processo de adoção ou adicionar aos favoritos.
     - [x] Implementar a funcionalidade com o backEnd para adicionar e remover dos favoritos.
-    - [ ] Implementar a funcionalidade com o backEnd para iniciar a adoção.
+    - [x] Implementar a funcionalidade com o backEnd para iniciar a adoção.
 ## 2.3. Listagem e Detalhes de Animais
 
 - [x] **Página de Detalhes do Animal:**
